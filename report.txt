@@ -1,0 +1,11 @@
+INDEX RETRIEVAL
+
+WHAT I HAVE DONE(APPROACH):
+
+- Class WordIndex that represents inverted index with hash set(dictionary where key is word and value is sorted list of doc_id's). Methods: add(),get(),finish(){finish() is called after we are finished adding elements to the dictionary, it transforms values from set to sorted list}. I didn't use normalisation of any kind.
+
+- Class Parser represents parser of infix queries with Functions AND,OR,NOT and (,) . Is implemented by Shunting-yard algorithm(infix -> postfix), then it is easy to eval query.
+
+- main() in main I tried to read and parse every xml file with "xml.etree.ElementTree" from std. library however, some files are filled with trash so I use try/catch if I catch an exception I use function "reformat_xml()" to well, reformat xml files. What I used for reformatting is visible in the body of function(self explanatory). I iterate through all .xml files and create and fill WordIndex object. Then I use "evaluate_file()" function to compute precision and recall and create output file "result_cs/en.txt"
+
+
